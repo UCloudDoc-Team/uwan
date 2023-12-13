@@ -8,5 +8,4 @@
 
 [使用指南](/uwan/usage/usage_detail.md)
 
-[常见问题](/uwan/Q&A/q&a.md)
 
