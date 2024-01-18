@@ -1,7 +1,6 @@
 # 概览
 * 动态与公告
-  * [新功能发布记录（定期更新）](/uwan/releasenotes/newfunctions.md)
-  * [产品公告（大型产品迭代或变更通知）](/uwan/releasenotes/updates.md)
+  * [新功能发布记录](/uwan/releasenotes/newfunctions.md)
 * 产品简介
   * [产品概述](/uwan/intro/description.md)
   * [功能特性](/uwan/intro/function.md)
