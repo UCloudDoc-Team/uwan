@@ -11,8 +11,10 @@
 ![usage2](/images/usage2.png)
 
 ### 创建隧道
-可以在网关创建完成后，直接前往创建隧道。也可以在CE客户网关页面，点击「创建隧道」，进行隧道创建。
-![usage3](/images/usage3.png)![usage4](/images/usage4.png)
+可以在网关创建完成后，直接前往创建隧道。
+![usage3](/images/usage3.png)
+也可以在CE客户网关页面，点击「创建隧道」，进行隧道创建。
+![usage4](/images/usage4.png)
 
 ### 隧道基础信息
 您可以在此页面填写隧道预共享密钥，预共享密钥是用于验证IPSec连接的Unicode字符串，用于验证您本地和UWAN虚拟路由器侧的连接，提高连接的安全性。
