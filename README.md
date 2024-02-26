@@ -16,5 +16,6 @@
 
 * 操作指南
   * [操作指南](/uwan/guide/user_guide.md)
-
+  * [UCPE3600硬件手册](/uwan/guide/UCPE3600HardwareManual.md)
+  * [初始化UCPE网络配置](/uwan/guide/UCPE_NetworkConfiguration.md)
 
