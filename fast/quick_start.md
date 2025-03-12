@@ -26,7 +26,7 @@ CE客户网关是一个虚拟网关实例，是您本地网关在UCloud侧的投
 请按需实际情况选择静态IP或动态IP的接入方式。
 
 ![快速入门-step3.2](/images/静态IP接入.png)
-![快速入门-step3.3](/images/动态态IP接入.png)
+![快速入门-step3.3](/images/动态IP接入.png)
 网关创建完成后，即可点击前往创建隧道。
 ![快速入门-step3.4](/images/快速入门-step3.3.png)
 
