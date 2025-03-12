@@ -16,25 +16,34 @@ UWAN智联可以帮助你实现门店网络、分支机构网络的智能组网�
 ![快速入门-step2.3](/images/快速入门-step2.3.png)
 ![快速入门-step2.4](/images/快速入门-step2.4.png)
 
-### 步骤三：创建CE客户网关。填写CE侧公网IP地址，以及网关名称
+### 步骤三：创建CE客户网关。
+
+### 填写CE侧公网IP地址，以及网关名称
+
 CE客户网关是一个虚拟网关实例，是您本地网关在UCloud侧的投射，用于覆盖节点网络出口设备通过VPN连接到UWAN虚拟路由器的接入场景。
 ![快速入门-step3.1](/images/快速入门-step3.1.png)
-![快速入门-step3.2](/images/快速入门-step3.2.png)
+
+请按需实际情况选择静态IP或动态IP的接入方式。
+
+![快速入门-step3.2](/images/静态IP接入.png)
+![快速入门-step3.3](/images/动态态IP接入.png)
 网关创建完成后，即可点击前往创建隧道。
-![快速入门-step3.3](/images/快速入门-step3.3.png)
+![快速入门-step3.4](/images/快速入门-step3.3.png)
 
 ### 步骤四：对VPN隧道进行配置
 填写基础配置
 ![快速入门-step4.1](/images/快速入门-step4.1.png)
 
-进行IKE设置
-![快速入门-step4.2](/images/快速入门-step4.2.png)
+进行IKE设置，若CE为动态IP接入，CE侧端口ID类型无法自动配置，需自行填写。
+![快速入门-step4.2](/images/IKE设置.png)
 
-进行IPSec设置
-![快速入门-step4.3](/images/快速入门-step4.3.png)
+进行IPSec设置，按实际情况选择感兴趣流模式或BGP模式。
+![快速入门-step4.3](/images/感兴趣流模式.png)
+
+![快速入门-step4.4](/images/BGP模式.png)
 
 进行管理设置
-![快速入门-step4.4](/images/快速入门-step4.4.png)
+![快速入门-step4.5](/images/快速入门-step4.4.png)
 
 点击确定后，UWAN虚拟路由器侧的VPN配置完成。
 您需自行完成CE侧VPN配置，即可完成CE客户网关到UWAN虚拟路由器的网络连接。
