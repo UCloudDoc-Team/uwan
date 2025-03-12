@@ -38,12 +38,11 @@ CE客户网关是一个虚拟网关实例，是您本地网关在UCloud侧的投
 ![快速入门-step4.2](/images/IKE设置.png)
 
 进行IPSec设置，按实际情况选择感兴趣流模式或BGP模式。
-![快速入门-step4.3](/images/兴趣流.png)
-
-![快速入门-step4.4](/images/BGP模式.png)
+![快速入门-step4.3](/images/快速入门-step4.3.png)
+![快速入门-step4.4](/images/快速入门-step4.4.png)
 
 进行管理设置
-![快速入门-step4.5](/images/快速入门-step4.4.png)
+![快速入门-step4.5](/images/快速入门-step4.5.png)
 
 点击确定后，UWAN虚拟路由器侧的VPN配置完成。
 您需自行完成CE侧VPN配置，即可完成CE客户网关到UWAN虚拟路由器的网络连接。
