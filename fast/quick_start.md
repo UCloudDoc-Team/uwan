@@ -38,7 +38,7 @@ CE客户网关是一个虚拟网关实例，是您本地网关在UCloud侧的投
 ![快速入门-step4.2](/images/IKE设置.png)
 
 进行IPSec设置，按实际情况选择感兴趣流模式或BGP模式。
-![快速入门-step4.3](/images/感兴趣流模式.png)
+![快速入门-step4.3](/images/兴趣流.png)
 
 ![快速入门-step4.4](/images/BGP模式.png)
 
