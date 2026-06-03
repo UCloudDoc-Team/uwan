@@ -13,6 +13,8 @@
   * [欠费回收](/uwan/buy/recycle.md)
 * 快速入门
   * [快速入门](/uwan/fast/quick_start.md)
+* 常见问题
+  * [常见问题](/uwan/Q&A/q&a.md)
 
 * 操作指南
   * [操作指南](/uwan/guide/user_guide.md)
