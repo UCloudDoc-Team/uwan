@@ -10,9 +10,10 @@
 
 ### 隧道状态
 
-| 指标 | 说明 |
+| 状态 | 说明 |
 |------|------|
-| VPN 隧道状态 | 隧道的连接状态。**UP**：IKE SA 和 IPSec Child SA 均已建立，隧道正常；**DOWN**：IKE SA 或 Child SA 异常，隧道不可用 |
+| UP | IKE SA 和 IPSec Child SA 均已建立，隧道正常 |
+| DOWN | IKE SA 或 Child SA 异常，隧道不可用 |
 
 > 隧道状态通过检测 IKE SA（ESTABLISHED）和 Child SA（INSTALLED）判定，两者均正常时状态为 UP。
 
@@ -23,7 +24,7 @@
 | 入向带宽 | 从 CE/CPE 流入 UWAN 虚拟路由器的数据速率 | bps |
 | 出向带宽 | 从 UWAN 虚拟路由器流向 CE/CPE 的数据速率 | bps |
 | 总带宽 | 入向 + 出向带宽之和 | bps |
-| 丢弃带宽 | 因超过带宽包限额被丢弃的数据速率 | bps |
+| 限速丢弃流量 | 因超过带宽包限额被限速丢弃的数据流量 | bps |
 
 > 带宽上限限制的是出入向总量（入向 + 出向之和不超过带宽包额度）。
 
