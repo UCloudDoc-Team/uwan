@@ -23,3 +23,6 @@
   * [操作指南](/uwan/guide/user_guide.md)
   * [CPE硬件手册](/uwan/guide/UCPE3600HardwareManual.md)
   * [初始化UCPE网络配置](/uwan/guide/UCPE_NetworkConfiguration.md)
+  * [CE侧VPN配置](/uwan/guide/ce_configuration)
+  * [故障排查](/uwan/guide/troubleshooting)
+  * [监控指标](/uwan/guide/monitoring)
