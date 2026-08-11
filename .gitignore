@@ -1,0 +1,6 @@
+# macOS
+.DS_Store
+
+# 文档备份（CLAUDE.md 工作流产生的 .bak.日期）
+*.bak
+*.bak.*
