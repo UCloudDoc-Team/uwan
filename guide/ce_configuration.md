@@ -52,7 +52,7 @@
 | DPD 开关 | 是否启用 Dead Peer Detection | 两端均开启 |
 | DPD 延迟 | 发送 DPD 探测的间隔时间 | 30 秒 |
 | DPD 超时 | 判定对端不可达的超时时间（仅 IKEv1） | — |
-| DPD 动作 | 检测到对端不可达后的动作 | trap（等待重连） |
+| DPD 动作 | 检测到对端不可达后的动作 | 无（trap）/ 重连（restart）/ 清理（clear） |
 
 !> **两端 DPD 配置必须一致**。如果一端开启 DPD 而另一端未开启，可能导致一端因 DPD 超时删除 SA 状态后，另一端仍保留旧 SA，造成单向丢包。详见[故障排查 - DPD 问题](/uwan/guide/troubleshooting.md)。
 
@@ -92,10 +92,9 @@ connections {
             remote_ts = 10.0.0.0/16
 
             esp_proposals = aes128-sha1-modp3072
-            rekey_time    = 3600s
+            rekey_time    = 3600
 
             dpd_action    = trap
-            start_action  = trap
             close_action  = restart
 
             mode = tunnel
@@ -104,7 +103,7 @@ connections {
 
       version = 2
       proposals = aes128-sha1-modp3072
-      rekey_time = 1080s
+      rekey_time = 1080
    }
 }
 
@@ -151,10 +150,9 @@ connections {
             remote_ts = 0.0.0.0/0
 
             esp_proposals = aes128-sha1-modp3072
-            rekey_time    = 3600s
+            rekey_time    = 3600
 
             dpd_action    = trap
-            start_action  = trap
             close_action  = restart
 
             mode = tunnel
@@ -163,7 +161,7 @@ connections {
 
       version = 2
       proposals = aes128-sha1-modp3072
-      rekey_time = 1080s
+      rekey_time = 1080
    }
 }
 

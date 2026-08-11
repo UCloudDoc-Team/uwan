@@ -129,21 +129,6 @@
 - 适当增大 DPD 延迟时间（建议 30 秒以上）
 - 将 DPD 动作从 `clear` 改为 `trap`，避免短暂抖动导致隧道断开
 
-#### DPD 两端配置不一致导致单向丢包
-
-!> 此类问题在实际使用中较为常见，请务必确保两端 DPD 策略一致。
-
-**现象**：一端因 DPD 检测断开隧道后，另一端仍认为隧道正常。表现为：
-- 对端 ping 本端失败（本端收到 ESP 包但 `ip xfrm state` 不存在，无法解密，包被丢弃）
-- 本端 ping 对端成功（`start_action = trap` 触发隧道重新协商）
-
-**根因**：两端 DPD 配置不一致时，一端因 DPD 超时删除了 SA 状态，另一端未开启 DPD 仍保留旧 SA。此时对端发来的 ESP 数据包在本端无法匹配已删除的 SA，被内核直接丢弃，导致单向丢包。
-
-**解决方法**：
-- **确保两端 DPD 配置完全一致**：`dpd_delay`、`dpd_timeout`、`dpd_action` 均需相同
-- 推荐配置：`dpd_delay = 30`，`dpd_action = trap`（不建议使用 `clear`，会直接删除 SA 导致数据包丢弃）
-- 如果 CE 侧使用 strongSwan，`start_action` 建议设为 `trap`，`close_action` 建议设为 `restart`，保证隧道断开后能自动重建
-
 ### SA 超时配置不当
 
 **现象**：隧道在 SA 超时时间到达后无法正常 rekey，导致断开。日志提示 `long lifetime proposed`。
@@ -154,14 +139,6 @@
 2. 确认 CE 侧的 rekey 时间配置与 UWAN 侧匹配
 
 **解决方法**：确保 CE 侧的 IKE rekey 时间和 IPSec rekey 时间与 UWAN 控制台配置一致。两端 SA 生存周期不强制要求相同，但为确保稳定性，推荐配置相同。
-
-### NAT 穿越问题
-
-**现象**：隧道协商失败，日志提示 `ignore the packet, received unexpecting payload type 130`。
-
-**排查步骤**：确认两端 NAT 穿越功能状态是否一致。
-
-**解决方法**：两端 NAT 穿越需同时开启或同时关闭。如 CE 在 NAT 网关之后，两端均需开启 NAT 穿越。
 
 ### 对端网关不响应
 
@@ -358,24 +335,3 @@ no matching peer config found
 | 收到 Delete 报文 | `received DELETE IKE_SA`、`received DELETE for ESP CHILD_SA` | 在对端排查发送 Delete 的原因 |
 | 协商未开始 | 无明显错误 | 尝试在控制台重置 VPN 隧道触发重新协商 |
 
----
-
-## 抓包排查指引
-
-如需进一步排查 VPN 隧道问题，可在 CE 侧设备上使用 tcpdump 抓包分析。
-
-### 抓取内层报文
-
-```bash
-tcpdump -i <内网接口> -nne host <内层IP地址>
-# 示例：tcpdump -i eth0 -nne host 192.168.0.100 and host 10.0.0.100
-```
-
-### 抓取外层报文
-
-```bash
-tcpdump -i <公网接口> -nne esp
-# 示例：tcpdump -i eth1 -nne esp
-```
-
-> 如需在 UWAN 侧抓包分析，请联系 UCloud 技术支持。
